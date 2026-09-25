@@ -1,2 +1,0 @@
-import { player } from '../data/player.js';
-export function hud(){return `<header class="hud"><button class="portrait" data-screen="settings">VIP</button><div><b>Lv ${player.level}</b><div class="xp"><i style="width:${player.xp/player.xpMax*100}%"></i></div></div><span>🛡 ${player.cover}/100 +</span><span>🔋 ${player.energy}/100 +</span><span>⚡ ${player.stamina}/100 +</span><span>💵 4.8M +</span><span>◈ 10M +</span></header>`}
