@@ -1,0 +1,44 @@
+{
+  "name": "Beta Bot Simulated Challenges (3x Daily)",
+  "description": "Simulates beta bot losses in slots #3 and #4 of Mayor's Office when a human occupies the slot above. Logs to TerritoryBattleLog for history narrative without moving bots.",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "interval",
+      "cron_expression": null,
+      "one_time_date": null,
+      "timezone": "UTC",
+      "interval_value": 8,
+      "interval_unit": "hours",
+      "interval_anchor": "2026-03-26T06:36:23.428000",
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "beta_bot_simulated_challenges_3x_daily",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "run_function": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "simulateBetaBotChallenges",
+            "args": {}
+          },
+          "then": "end"
+        }
+      }
+    ]
+  },
+  "x-base44-migrated-from-automation": {
+    "legacy_payload_function": "simulateBetaBotChallenges"
+  }
+}

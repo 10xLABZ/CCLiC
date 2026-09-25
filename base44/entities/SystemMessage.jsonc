@@ -1,0 +1,68 @@
+{
+  "name": "SystemMessage",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Base44 user ID"
+    },
+    "type": {
+      "type": "string",
+      "description": "purchase_consumable | purchase_nonconsumable | vip_purchase | restore_success | restore_failed | system_event"
+    },
+    "title": {
+      "type": "string",
+      "description": "Short display title"
+    },
+    "body": {
+      "type": "string",
+      "description": "Human-readable description"
+    },
+    "item_id": {
+      "type": "string",
+      "description": "The item ID purchased/granted"
+    },
+    "item_name": {
+      "type": "string",
+      "description": "Human-readable item name"
+    },
+    "currency": {
+      "type": "string",
+      "description": "cash | cryd | usd"
+    },
+    "amount_paid": {
+      "type": "number",
+      "description": "Amount of currency spent"
+    },
+    "quantity": {
+      "type": "number",
+      "description": "Quantity of item granted"
+    },
+    "category": {
+      "type": "string",
+      "description": "weapons | vehicles | power | pets | avatars | scenes | themes | consumable | vip"
+    },
+    "is_consumable": {
+      "type": "boolean",
+      "description": "True if this is a consumable item (no restore allowed)"
+    },
+    "restored": {
+      "type": "boolean",
+      "description": "True if this purchase has already been restored"
+    },
+    "meta": {
+      "type": "string",
+      "description": "JSON string with extra audit data"
+    },
+    "timestamp": {
+      "type": "number",
+      "description": "Unix ms timestamp"
+    }
+  },
+  "required": [
+    "user_id",
+    "type",
+    "title",
+    "timestamp"
+  ]
+}

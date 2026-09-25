@@ -1,0 +1,27 @@
+{
+  "name": "GameSave",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "User ID of the player"
+    },
+    "save_data": {
+      "type": "string",
+      "description": "Stringified localStorage data"
+    },
+    "timestamp": {
+      "type": "number",
+      "description": "Unix timestamp of save"
+    },
+    "device_info": {
+      "type": "string",
+      "description": "Browser/device identifier"
+    }
+  },
+  "required": [
+    "user_id",
+    "save_data",
+    "timestamp"
+  ]
+}

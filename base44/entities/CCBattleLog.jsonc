@@ -1,0 +1,66 @@
+{
+  "name": "CCBattleLog",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "cycle_start": {
+      "type": "number"
+    },
+    "type": {
+      "type": "string",
+      "description": "OFFENSIVE or DEFENSIVE"
+    },
+    "outcome": {
+      "type": "string",
+      "description": "WIN, LOSS, DEFENDED, or LOST"
+    },
+    "challenger_name": {
+      "type": "string"
+    },
+    "challenger_level": {
+      "type": "integer"
+    },
+    "challenger_slot": {
+      "type": "integer"
+    },
+    "challenger_atk": {
+      "type": "number"
+    },
+    "my_slot": {
+      "type": "integer"
+    },
+    "pushed_to_slot": {
+      "type": "integer"
+    },
+    "my_atk": {
+      "type": "number"
+    },
+    "my_def": {
+      "type": "number"
+    },
+    "my_tp": {
+      "type": "number"
+    },
+    "opp_atk": {
+      "type": "number"
+    },
+    "opp_def": {
+      "type": "number"
+    },
+    "opp_tp": {
+      "type": "number"
+    },
+    "timestamp": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "user_id",
+    "cycle_start",
+    "type",
+    "outcome",
+    "timestamp"
+  ]
+}

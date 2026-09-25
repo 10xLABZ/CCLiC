@@ -1,0 +1,92 @@
+{
+  "name": "TerritorySlot",
+  "type": "object",
+  "properties": {
+    "building_id": {
+      "type": "string",
+      "description": "mayors_office|town_hall|city_bank|stock_exchange|crypto_mining"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "slot_number": {
+      "type": "integer",
+      "description": "1 (top) to 50 (bottom)"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "profile_image_url": {
+      "type": "string"
+    },
+    "player_level": {
+      "type": "integer"
+    },
+    "player_power": {
+      "type": "number"
+    },
+    "atk": {
+      "type": "number",
+      "description": "Attack value \u2014 stored from PlayerProfile or generated for bots"
+    },
+    "def": {
+      "type": "number",
+      "description": "Defense value \u2014 stored from PlayerProfile or generated for bots"
+    },
+    "last_payout_at": {
+      "type": "number",
+      "description": "Unix ms timestamp of last hourly payout"
+    },
+    "last_fight_at": {
+      "type": "number",
+      "description": "Unix ms timestamp of the last time this human player fought \u2014 used for inactivity tracking"
+    },
+    "is_nemesis": {
+      "type": "boolean",
+      "description": "True if this slot is occupied by a Nemesis Bot"
+    },
+    "bot_wins": {
+      "type": "integer"
+    },
+    "bot_losses": {
+      "type": "integer"
+    },
+    "next_victory_at": {
+      "type": "number",
+      "description": "Unix ms timestamp \u2014 when NB is next scheduled to challenge"
+    },
+    "challenge_target_user_id": {
+      "type": "string",
+      "description": "user_id of the human player this NB is currently locked onto and growing to challenge"
+    },
+    "challenge_start_at": {
+      "type": "number",
+      "description": "Unix ms timestamp \u2014 when NB began its current power-up cycle"
+    },
+    "challenge_ready_at": {
+      "type": "number",
+      "description": "Unix ms timestamp \u2014 when NB reaches full target power and executes challenge"
+    },
+    "target_player_power": {
+      "type": "number",
+      "description": "The ultimate power this NB is growing toward (1-10% above target human)"
+    },
+    "initial_nb_power": {
+      "type": "number",
+      "description": "NB power at the start of this challenge cycle \u2014 used for linear interpolation"
+    }
+  },
+  "required": [
+    "building_id",
+    "city",
+    "state",
+    "slot_number",
+    "user_id"
+  ]
+}

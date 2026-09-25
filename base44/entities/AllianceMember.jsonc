@@ -1,0 +1,43 @@
+{
+  "name": "AllianceMember",
+  "type": "object",
+  "properties": {
+    "alliance_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "profile_image_url": {
+      "type": "string"
+    },
+    "level": {
+      "type": "integer"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "leader",
+        "vp",
+        "war_general",
+        "strategist",
+        "diplomat",
+        "officer",
+        "member"
+      ],
+      "default": "member"
+    },
+    "joined_at": {
+      "type": "number",
+      "description": "Unix ms timestamp"
+    }
+  },
+  "required": [
+    "alliance_id",
+    "user_id",
+    "username"
+  ]
+}

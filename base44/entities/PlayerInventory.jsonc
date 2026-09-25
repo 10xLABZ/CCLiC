@@ -1,0 +1,136 @@
+{
+  "name": "PlayerInventory",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Base44 user ID"
+    },
+    "firearms": {
+      "type": "object",
+      "description": "Owned firearms map {itemId: qty}"
+    },
+    "weapons": {
+      "type": "object",
+      "description": "Owned weapons map {itemId: qty}"
+    },
+    "vehicles": {
+      "type": "object",
+      "description": "Owned vehicles map {itemId: qty}"
+    },
+    "power": {
+      "type": "object",
+      "description": "Owned power items map {itemId: qty}"
+    },
+    "pets": {
+      "type": "object",
+      "description": "Owned pets map {itemId: qty}"
+    },
+    "avatars": {
+      "type": "object",
+      "description": "Owned avatars map {itemId: qty}"
+    },
+    "scenes": {
+      "type": "object",
+      "description": "Owned scenes map {itemId: qty}"
+    },
+    "themes": {
+      "type": "object",
+      "description": "Owned themes map {itemId: qty}"
+    },
+    "loadout": {
+      "type": "object",
+      "description": "Active equipped loadout {weapon1, weapon2, weapon3, weapon4, vehicle, power, pet}"
+    },
+    "weaponUpgrades": {
+      "type": "object",
+      "description": "Weapon upgrade parts spent map {itemId: partsSpent}"
+    },
+    "avatarUpgrades": {
+      "type": "object",
+      "description": "Avatar upgrade shards spent map {avatarId: shardsSpent}"
+    },
+    "research": {
+      "type": "object",
+      "description": "Unlocked research nodes map {nodeId: true}"
+    },
+    "researchLabLevel": {
+      "type": "integer",
+      "description": "Current research lab level (0-5)"
+    },
+    "activeResearch": {
+      "type": "object",
+      "description": "Currently active research timer {id, name, finishTime, hours}"
+    },
+    "activeLabUpgrade": {
+      "type": "object",
+      "description": "Currently active lab upgrade timer {toLevel, finishTime, hours}"
+    },
+    "consumables": {
+      "type": "object",
+      "description": "Owned consumable items map {itemId: qty} \u2014 energy/stamina/opcover boosters, shields, shards, gear parts"
+    },
+    "simpleUpgrades": {
+      "type": "object",
+      "description": "Simple HQ-style upgrade levels for vehicles/pets/power items {itemId: upgradeLevel(0-10)}"
+    }
+  },
+  "required": [
+    "user_id"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

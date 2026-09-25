@@ -1,0 +1,115 @@
+{
+  "name": "HolidayEvent",
+  "type": "object",
+  "properties": {
+    "holiday_key": {
+      "type": "string",
+      "description": "Internal key: valentines, stpatricks, easter, memorial, independence, labor, halloween, thanksgiving, christmas, newyear"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "User-facing name e.g. Valentine's Day Sale"
+    },
+    "tagline": {
+      "type": "string",
+      "description": "Short marketing tagline e.g. Love. Loyalty. Power."
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO date when the sale goes live (YYYY-MM-DD)"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO date when the sale ends (YYYY-MM-DD)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Sale is live \u2014 items purchasable in shop"
+    },
+    "is_advertised": {
+      "type": "boolean",
+      "default": false,
+      "description": "Popup poster shows on app open (starts 7 days before start_date)"
+    },
+    "pack_name": {
+      "type": "string",
+      "description": "Name of the holiday sale pack"
+    },
+    "pack_description": {
+      "type": "string",
+      "description": "Marketing description of the pack contents"
+    },
+    "pack_items": {
+      "type": "string",
+      "description": "JSON string array of items [{category, item_id, item_name}]"
+    },
+    "pack_price_cryd": {
+      "type": "integer",
+      "default": 0,
+      "description": "Price in CRYD currency"
+    },
+    "pack_price_usd": {
+      "type": "number",
+      "default": 0,
+      "description": "Price in real-money USD"
+    },
+    "poster_image_url": {
+      "type": "string",
+      "description": "Image URL for the app-open popup poster"
+    },
+    "banner_image_url": {
+      "type": "string",
+      "description": "Image URL for the shop top banner carousel"
+    },
+    "theme_color": {
+      "type": "string",
+      "default": "#ec4899",
+      "description": "Hex color for theming popup and banner accents"
+    },
+    "sort_order": {
+      "type": "integer",
+      "default": 0,
+      "description": "Display sort order"
+    }
+  },
+  "required": [
+    "holiday_key",
+    "display_name",
+    "start_date",
+    "end_date"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

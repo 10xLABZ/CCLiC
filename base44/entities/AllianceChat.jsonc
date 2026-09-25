@@ -1,0 +1,42 @@
+{
+  "name": "AllianceChat",
+  "type": "object",
+  "properties": {
+    "alliance_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "profile_image_url": {
+      "type": "string"
+    },
+    "level": {
+      "type": "integer"
+    },
+    "message": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "leader",
+        "officer",
+        "member"
+      ]
+    },
+    "timestamp": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "alliance_id",
+    "user_id",
+    "username",
+    "message",
+    "timestamp"
+  ]
+}

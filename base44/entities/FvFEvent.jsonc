@@ -1,0 +1,48 @@
+{
+  "name": "FvFEvent",
+  "type": "object",
+  "properties": {
+    "week_start_date": {
+      "type": "string",
+      "description": "ISO date string of the Monday this event week started"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "cooldown",
+        "ended"
+      ],
+      "default": "active"
+    },
+    "current_day_theme": {
+      "type": "string",
+      "enum": [
+        "intel_day",
+        "firearm_dev_day",
+        "research_day",
+        "avatar_accessory_day",
+        "full_prep_day",
+        "battle_day",
+        "cooldown"
+      ],
+      "description": "Current active daily theme"
+    },
+    "matchmaking_brackets": {
+      "type": "string",
+      "description": "JSON string array of matched alliance pairs [{alliance_a_id, alliance_b_id, tier}]"
+    },
+    "rewards_distributed": {
+      "type": "boolean",
+      "default": false
+    },
+    "total_alliances": {
+      "type": "integer",
+      "default": 0
+    }
+  },
+  "required": [
+    "week_start_date",
+    "status"
+  ]
+}

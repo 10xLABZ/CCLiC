@@ -1,0 +1,44 @@
+{
+  "name": "FvF Bot Score Simulation (3x Daily)",
+  "description": "Runs 3x daily at ~2AM, 12PM, and 11PM ET to simulate bot alliance FvF scores in 3 tranches: 20% morning, 30% midday, 50% evening (cumulative 20%/50%/100%).",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "0 3,6,16 * * *",
+      "one_time_date": null,
+      "timezone": "UTC",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "fvf_bot_score_simulation_3x_daily",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "run_function": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "generateFvfMatchmaking",
+            "args": {}
+          },
+          "then": "end"
+        }
+      }
+    ]
+  },
+  "x-base44-migrated-from-automation": {
+    "legacy_payload_function": "generateFvfMatchmaking"
+  }
+}

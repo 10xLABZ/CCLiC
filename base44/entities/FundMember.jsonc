@@ -1,0 +1,73 @@
+{
+  "name": "FundMember",
+  "type": "object",
+  "properties": {
+    "alliance_id": {
+      "type": "string",
+      "description": "Alliance this member belongs to"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "Base44 user ID"
+    },
+    "username": {
+      "type": "string"
+    },
+    "fundbux_balance": {
+      "type": "integer",
+      "default": 0,
+      "description": "FundBux available to spend in the Fund Shop"
+    },
+    "total_donated_cash": {
+      "type": "number",
+      "default": 0,
+      "description": "Lifetime cash donated to fund research"
+    },
+    "total_donated_cryd": {
+      "type": "integer",
+      "default": 0,
+      "description": "Lifetime CRYD donated to fund research"
+    },
+    "last_gear_part_date": {
+      "type": "string",
+      "description": "ISO date string of last gear part purchase (daily limit)"
+    },
+    "last_avatar_part_date": {
+      "type": "string",
+      "description": "ISO date string of last avatar part purchase (daily limit)"
+    }
+  },
+  "required": [
+    "alliance_id",
+    "user_id"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

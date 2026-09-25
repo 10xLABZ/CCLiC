@@ -1,0 +1,61 @@
+{
+  "name": "Alliance",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Alliance name"
+    },
+    "tag": {
+      "type": "string",
+      "description": "Short 2-5 char tag e.g. [APX]"
+    },
+    "description": {
+      "type": "string"
+    },
+    "leader_user_id": {
+      "type": "string"
+    },
+    "leader_username": {
+      "type": "string"
+    },
+    "member_count": {
+      "type": "integer",
+      "default": 1
+    },
+    "total_power": {
+      "type": "number",
+      "default": 0
+    },
+    "hq_state": {
+      "type": "string"
+    },
+    "hq_city": {
+      "type": "string"
+    },
+    "emblem": {
+      "type": "string",
+      "description": "Emoji or image id used as the alliance emblem"
+    },
+    "is_open": {
+      "type": "boolean",
+      "description": "If true, anyone can join without approval",
+      "default": true
+    },
+    "min_level": {
+      "type": "integer",
+      "description": "Minimum player level to join",
+      "default": 1
+    },
+    "is_bot": {
+      "type": "boolean",
+      "description": "True if this is a bot-controlled alliance (not human players)",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "tag",
+    "leader_user_id"
+  ]
+}

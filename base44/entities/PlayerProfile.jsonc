@@ -1,0 +1,269 @@
+{
+  "name": "PlayerProfile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Base44 user ID"
+    },
+    "username": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "level": {
+      "type": "integer"
+    },
+    "xp": {
+      "type": "integer"
+    },
+    "respect": {
+      "type": "integer"
+    },
+    "cash": {
+      "type": "number"
+    },
+    "crypto": {
+      "type": "integer"
+    },
+    "energy": {
+      "type": "integer"
+    },
+    "stamina": {
+      "type": "integer"
+    },
+    "op_cover": {
+      "type": "integer",
+      "description": "Operation Cover (0-100). Deducted by jobs/assists/battles. Regens +1 per 3 min server-side."
+    },
+    "last_op_cover_timestamp": {
+      "type": "number",
+      "description": "Unix ms timestamp of last op cover change \u2014 used for server-authoritative regen calculation"
+    },
+    "attack_value": {
+      "type": "number"
+    },
+    "defense_value": {
+      "type": "number"
+    },
+    "last_stamina_timestamp": {
+      "type": "number"
+    },
+    "last_energy_timestamp": {
+      "type": "number"
+    },
+    "equipped_avatar_id": {
+      "type": "string"
+    },
+    "equipped_scene_id": {
+      "type": "string"
+    },
+    "equipped_theme_id": {
+      "type": "string"
+    },
+    "equipped_frame_id": {
+      "type": "string",
+      "description": "Currently equipped profile image frame ID"
+    },
+    "owned_frames": {
+      "type": "string",
+      "description": "JSON string of owned frames array [{id, expiresAt, grantedAt}]"
+    },
+    "profile_image_url": {
+      "type": "string"
+    },
+    "location_state": {
+      "type": "string"
+    },
+    "location_city": {
+      "type": "string"
+    },
+    "winstreak": {
+      "type": "integer"
+    },
+    "losstreak": {
+      "type": "integer"
+    },
+    "jobs_completed_today": {
+      "type": "integer"
+    },
+    "trades_completed_today": {
+      "type": "integer"
+    },
+    "trade_wars_won_today": {
+      "type": "integer"
+    },
+    "last_claim_date": {
+      "type": "string"
+    },
+    "claimed_daily_goals": {
+      "type": "string",
+      "description": "JSON string array of daily goal IDs claimed today (e.g. [\"jobs\",\"trades\",\"tradewars\",\"all_bonus\"])"
+    },
+    "last_vip_daily_claim_date": {
+      "type": "string",
+      "description": "Date string (toDateString) of last VIP daily reward claim"
+    },
+    "total_trades_completed": {
+      "type": "integer"
+    },
+    "total_trading_profit": {
+      "type": "number"
+    },
+    "total_jobs_completed": {
+      "type": "integer"
+    },
+    "total_trade_war_wins": {
+      "type": "integer"
+    },
+    "total_trade_war_losses": {
+      "type": "integer"
+    },
+    "total_assists": {
+      "type": "integer"
+    },
+    "total_sabotages": {
+      "type": "integer"
+    },
+    "sabotages_remaining": {
+      "type": "integer"
+    },
+    "last_sabotage_regen_timestamp": {
+      "type": "number"
+    },
+    "has_completed_onboarding": {
+      "type": "boolean"
+    },
+    "shield_active_until": {
+      "type": "number"
+    },
+    "shield_type": {
+      "type": "string"
+    },
+    "fund_members_owned": {
+      "type": "integer"
+    },
+    "hidden_until": {
+      "type": "number",
+      "description": "Unix ms timestamp \u2014 player hidden from map/lists until this time"
+    },
+    "last_attacked_by": {
+      "type": "string",
+      "description": "JSON string with attacker info for offline attack notification"
+    },
+    "vip_active_until": {
+      "type": "number",
+      "description": "Unix ms timestamp \u2014 VIP subscription expiry"
+    },
+    "vip_xp": {
+      "type": "integer",
+      "description": "Permanent VIP XP \u2014 never decreases, persists even when VIP lapses. 200 per daily claim, 1 per CRYD spent."
+    },
+    "vip_level": {
+      "type": "integer",
+      "description": "Current VIP level (1-20) calculated from vip_xp. Only applies buffs when VIP is active."
+    },
+    "loadout_presets": {
+      "type": "string",
+      "description": "JSON string of saved loadout presets"
+    },
+    "alliance_tag": {
+      "type": "string",
+      "description": "Current alliance tag (e.g. APX)"
+    },
+    "last_daily_reset": {
+      "type": "string",
+      "description": "UTC date string (YYYY-MM-DD) of last daily counter reset \u2014 used server-side to zero trades/jobs/wars counters"
+    },
+    "fast_five_baseline": {
+      "type": "string",
+      "description": "JSON string of Fast Five event baseline stats {attacks, jobs, assists, sabotages, trades}"
+    },
+    "fast_five_cycle": {
+      "type": "number",
+      "description": "Unix ms timestamp of the Fast Five event cycle this baseline belongs to"
+    },
+    "shard_frenzy_baseline": {
+      "type": "string",
+      "description": "JSON string of Shard Frenzy event baseline stats {attacks, jobs, assists, sabotages, trades}"
+    },
+    "shard_frenzy_cycle": {
+      "type": "number",
+      "description": "Unix ms timestamp of the Shard Frenzy event cycle this baseline belongs to"
+    },
+    "gear_overdrive_baseline": {
+      "type": "string",
+      "description": "JSON string of Gear Overdrive event baseline stats {attacks, jobs, assists, sabotages, trades}"
+    },
+    "gear_overdrive_cycle": {
+      "type": "number",
+      "description": "Unix ms timestamp of the Gear Overdrive event cycle this baseline belongs to"
+    },
+    "world_tour_baseline": {
+      "type": "string",
+      "description": "JSON string of World Tour event baseline stats {trades}"
+    },
+    "world_tour_cycle": {
+      "type": "number",
+      "description": "Unix ms timestamp of the World Tour event cycle this baseline belongs to"
+    },
+    "world_tour_city_log": {
+      "type": "string",
+      "description": "JSON string of World Tour per-city action log {cityName: {jobs, attacks, assists, sabotages}}"
+    },
+    "defence_log": {
+      "type": "string",
+      "description": "JSON string array of recent defence log entries [{bot, outcome, timestamp, revengeAvailable, revengeAttempts, isOffline}] \u2014 capped to ~15 entries"
+    }
+  },
+  "required": [
+    "user_id"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "data.user_id": "{{user.id}}"
+    }
+  }
+}

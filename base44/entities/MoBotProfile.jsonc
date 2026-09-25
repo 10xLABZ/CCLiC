@@ -1,0 +1,38 @@
+{
+  "name": "MoBotProfile",
+  "type": "object",
+  "properties": {
+    "bot_index": {
+      "type": "integer",
+      "description": "Unique index 0-149 for this bot profile"
+    },
+    "username": {
+      "type": "string"
+    },
+    "profile_image_url": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string",
+      "description": "M | F | NB"
+    },
+    "player_level": {
+      "type": "integer"
+    },
+    "player_power": {
+      "type": "number"
+    },
+    "bot_wins": {
+      "type": "integer"
+    },
+    "bot_losses": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "bot_index",
+    "username",
+    "player_level",
+    "player_power"
+  ]
+}

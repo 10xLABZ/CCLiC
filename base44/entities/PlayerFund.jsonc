@@ -1,0 +1,28 @@
+{
+  "name": "PlayerFund",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Base44 user ID"
+    },
+    "fund_name": {
+      "type": "string"
+    },
+    "fund_members": {
+      "type": "integer"
+    },
+    "hq_state": {
+      "type": "string"
+    },
+    "hq_city": {
+      "type": "string"
+    },
+    "image_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id"
+  ]
+}

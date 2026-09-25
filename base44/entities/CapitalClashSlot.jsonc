@@ -1,0 +1,44 @@
+{
+  "name": "CapitalClashSlot",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "profile_image_url": {
+      "type": "string"
+    },
+    "player_level": {
+      "type": "integer"
+    },
+    "atk": {
+      "type": "number"
+    },
+    "def": {
+      "type": "number"
+    },
+    "slot_number": {
+      "type": "integer",
+      "description": "1-100"
+    },
+    "cycle_start": {
+      "type": "number",
+      "description": "Unix ms timestamp of the Monday this cycle started"
+    },
+    "is_vip": {
+      "type": "boolean"
+    },
+    "alliance_tag": {
+      "type": "string",
+      "description": "Player's alliance tag at time of entry (e.g. APX)"
+    }
+  },
+  "required": [
+    "user_id",
+    "slot_number",
+    "cycle_start"
+  ]
+}

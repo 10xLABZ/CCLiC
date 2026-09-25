@@ -1,0 +1,78 @@
+{
+  "name": "FundResearch",
+  "type": "object",
+  "properties": {
+    "alliance_id": {
+      "type": "string",
+      "description": "Alliance this fund research belongs to"
+    },
+    "alliance_tag": {
+      "type": "string",
+      "description": "Alliance tag for quick display"
+    },
+    "current_tier": {
+      "type": "integer",
+      "default": 1,
+      "description": "Current active tier (1-6)"
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "research",
+        "breakthrough",
+        "complete"
+      ],
+      "default": "research",
+      "description": "Current phase within the tier"
+    },
+    "research_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Total cash donated toward current tier research"
+    },
+    "breakthrough_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Total CRYD donated toward current tier breakthrough"
+    },
+    "total_fvf_bonus_pct": {
+      "type": "number",
+      "default": 0,
+      "description": "Cumulative FvF point multiplier bonus percentage (0-100)"
+    }
+  },
+  "required": [
+    "alliance_id"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

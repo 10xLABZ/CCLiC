@@ -1,0 +1,58 @@
+{
+  "name": "FvFScore",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Player who earned the points"
+    },
+    "username": {
+      "type": "string"
+    },
+    "alliance_id": {
+      "type": "string",
+      "description": "Alliance this player belonged to when points were earned"
+    },
+    "alliance_tag": {
+      "type": "string",
+      "description": "Alliance tag for quick display e.g. [APX]"
+    },
+    "event_week_start": {
+      "type": "string",
+      "description": "ISO date string of the Monday for this event week"
+    },
+    "event_date": {
+      "type": "string",
+      "description": "ISO date string (YYYY-MM-DD) of the specific day points were earned"
+    },
+    "day_theme": {
+      "type": "string",
+      "enum": [
+        "intel_day",
+        "firearm_dev_day",
+        "research_day",
+        "avatar_accessory_day",
+        "full_prep_day",
+        "battle_day"
+      ],
+      "description": "The daily theme when points were earned"
+    },
+    "points": {
+      "type": "number",
+      "default": 0,
+      "description": "Total points earned by this player on this day"
+    },
+    "is_bot": {
+      "type": "boolean",
+      "default": false,
+      "description": "True if this score was simulated by a bot alliance member"
+    }
+  },
+  "required": [
+    "user_id",
+    "alliance_id",
+    "event_week_start",
+    "event_date",
+    "day_theme"
+  ]
+}
